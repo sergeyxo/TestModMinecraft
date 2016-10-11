@@ -7,26 +7,10 @@ public class ProgressDialogManager {
 
     private ProgressDialog progressDialog;
 
-    public ProgressDialogManager(Context context) {
-        if (progressDialog == null) {
-            initProgressDialog(context);
-            progressDialog.setMessage("Loading");
-            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        }
-    }
-
     public ProgressDialogManager(Context context, int style) {
         if (progressDialog == null) {
             initProgressDialog(context);
             progressDialog.setMessage("Loading");
-            progressDialog.setProgressStyle(style);
-        }
-    }
-
-    public ProgressDialogManager(Context context, int style, String message) {
-        if (progressDialog == null) {
-            initProgressDialog(context);
-            progressDialog.setMessage(message);
             progressDialog.setProgressStyle(style);
         }
     }
@@ -66,6 +50,5 @@ public class ProgressDialogManager {
     private void initProgressDialog(Context context) {
         progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(true);
-//        progressDialog.setIndeterminate(true);
     }
 }

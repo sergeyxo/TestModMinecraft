@@ -8,9 +8,6 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 
-import net.lingala.zip4j.core.ZipFile;
-import net.lingala.zip4j.exception.ZipException;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;

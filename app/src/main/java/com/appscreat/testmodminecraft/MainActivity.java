@@ -1,6 +1,5 @@
 package com.appscreat.testmodminecraft;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,8 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
-    String listMod[] = {
-            "https://storage.googleapis.com/json-data-base.appspot.com/apps/modsforminecraft/mods/screenshots/UpdateMods/PixelmonMod.modpkg"};
+    String url = "https://storage.googleapis.com/json-data-base.appspot.com/apps/modsforminecraft/mods/screenshots/UpdateMods/PixelmonMod.modpkg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Скачивание архива и разархивация файла
-                new FileManager.DownloadFileAsync(MainActivity.this, "/Downloads/Mods/").execute(listMod[0]);
+                //Скачивание архива
+                new FileManager.DownloadFileAsync(MainActivity.this, "/Downloads/Mods/").execute(url);
 
-                //После скачивания и разархивации
+                //После скачивания
                 installModToMinecraft();
             }
         });
@@ -71,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + packageName)));
         }
     }
-
 
 
 }
