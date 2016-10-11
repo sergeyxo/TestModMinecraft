@@ -10,6 +10,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
+
+    //Для версий 0.15.7, 0.15.6, 0.15.4, 0.15.0, 0.14.3
     String url = "https://storage.googleapis.com/json-data-base.appspot.com/apps/modsforminecraft/mods/screenshots/UpdateMods/PixelmonMod.modpkg";
 
     @Override
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Скачивание архива
+                //Скачивание мода
                 new FileManager.DownloadFileAsync(MainActivity.this, "/Downloads/Mods/").execute(url);
 
                 //После скачивания
